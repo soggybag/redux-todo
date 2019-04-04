@@ -7,12 +7,10 @@ class TodoList extends Component {
   
   renderTodos() {
     const { todos } = this.props
-    return todos.map((todo, i) => <Todo {...todo} index={i} />)
+    return todos.map((todo, i) => <Todo {...todo} index={i} key={i} />)
   }
 
   render() {
-
-
     return (
       <div>
         {this.renderTodos()}
