@@ -1,0 +1,29 @@
+
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-name {
+  
+}
+
+.todo-completed {
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 0.25em;
+  border: none;
+  cursor: pointer;
+}
+
+.completed {
+  background-color: #fff;
+  color: #000;
+}
