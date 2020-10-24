@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { deleteTodo } from '../../actions/index'
 import './todo.css'
 
 class Todo extends Component {
@@ -12,6 +14,9 @@ class Todo extends Component {
       <div className="todo">
         <h1 className="todo-name">{name}</h1>
         <button 
+          onClick={() => {
+            this.props.deleteTodo(index)
+          }}
           className={`todo-completed ${completedClass}`}
         >
           X
@@ -21,4 +26,10 @@ class Todo extends Component {
   }
 }
 
-export default Todo
+const mapDispatchToProps = () => {
+  return {
+    deleteTodo
+  }
+}
+
+export default connect(null, mapDispatchToProps())(Todo)

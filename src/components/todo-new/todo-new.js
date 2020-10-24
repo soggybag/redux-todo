@@ -14,12 +14,18 @@ class TodoNew extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const { todoName } = this.state 
+
+    const { todoName } = this.state
+
     if (todoName === '') { return }
-    this.props.newTodo({ 
+
+    // newTodo = (payload) => { ..... }
+
+    this.props.newTodo( { 
       name: this.state.todoName, 
-      completed: false
-    })
+      completed: false, 
+      date: new Date()
+    } )
     this.setState({ todoName: '' })
   }
 
@@ -36,12 +42,14 @@ class TodoNew extends Component {
           value={this.state.todoName}
           onChange={(e) => this.setState({ todoName: e.target.value })}
         />
+
         <button 
           className="todo-button"
           type="submit"
         >
           +
         </button>
+
       </form>
     )
   }

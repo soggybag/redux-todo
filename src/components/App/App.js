@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <h1>Todos</h1>
+          <h1>Todos ++</h1>
           <TodoNew />
           <TodoList />
         </div>
