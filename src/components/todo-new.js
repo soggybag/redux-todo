@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { connect, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { newTodo } from '../actions'
 
 import './todo-new.css'
@@ -45,12 +45,4 @@ function TodoNew(props) {
   )
 }
 
-const mapStateToProps = (state) => {
-  return { ...state }
-}
-
-const mapDispatchToProps = () => {
-  return { newTodo }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps())(TodoNew)
+export default TodoNew

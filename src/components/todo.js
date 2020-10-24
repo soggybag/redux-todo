@@ -1,35 +1,27 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../actions'
 import './todo.css'
 
-class Todo extends Component {
+function Todo(props) {
+  const dispatch = useDispatch()
+  const { name, completed, index } = props
 
-  render() {
-    const { name, completed, index } = this.props
+  const completedClass = completed ? 'completed' : ''
 
-    const completedClass = completed ? 'completed' : ''
-
-    return (
-      <div className="todo">
-        <h1 className="todo-name">{name}</h1>
-        <button 
-          onClick={() => {
-            this.props.deleteTodo(index)
-          }}
-          className={`todo-completed ${completedClass}`}
-        >
-          X
-        </button>
-      </div>
-    )
-  }
+  return (
+    <div className="todo">
+      <h1 className="todo-name">{name}</h1>
+      <button 
+        onClick={() => {
+          dispatch(deleteTodo(index))
+        }}
+        className={`todo-completed ${completedClass}`}
+      >
+        X
+      </button>
+    </div>
+  )
 }
 
-const mapDispatchToProps = () => {
-  return {
-    deleteTodo
-  }
-}
-
-export default connect(null, mapDispatchToProps())(Todo)
+export default Todo
