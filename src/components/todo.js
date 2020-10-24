@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteTodo } from '../../actions/index'
+import { deleteTodo } from '../actions'
 import './todo.css'
 
 class Todo extends Component {
