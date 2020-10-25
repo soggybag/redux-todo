@@ -1,6 +1,7 @@
 import { NEW_TODO, DELETE_TODO } from '../actions'
+// import the new action
 
-export default (state = [], action) => {
+const todoReducer = (state = [], action) => {
   switch(action.type) {
     case NEW_TODO: 
       return [...state, action.payload]
@@ -11,7 +12,11 @@ export default (state = [], action) => {
       })
       return newState
 
+    // Add a new case to handle the action
+
     default: 
       return state
   }
 }
+
+export default todoReducer

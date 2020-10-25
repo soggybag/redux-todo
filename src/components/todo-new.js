@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { newTodo } from '../actions'
 
+import TodoItem from './TodoItem'
+
 import './todo-new.css'
 
 function TodoNew(props) {
@@ -13,11 +15,7 @@ function TodoNew(props) {
     e.preventDefault()
     if (name === '') { return }
     // newTodo = (payload) => { ..... }
-    dispatch(newTodo( { 
-      name: name, 
-      completed: false, 
-      date: new Date()
-    } ))
+    dispatch(newTodo(new TodoItem(name)))
     setName('')
   }
 

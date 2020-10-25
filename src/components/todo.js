@@ -2,24 +2,26 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../actions'
 import './todo.css'
+// import your complete todo action
 
 function Todo(props) {
   const dispatch = useDispatch()
   const { name, completed, index } = props
 
   const completedClass = completed ? 'completed' : ''
+  // Use a class to style the complete button
 
   return (
     <div className="todo">
       <h1 className="todo-name">{name}</h1>
       <button 
+        className="TodoRemoveButton"
         onClick={() => {
           dispatch(deleteTodo(index))
         }}
         className={`todo-completed ${completedClass}`}
-      >
-        X
-      </button>
+      >✖︎</button>
+      {/* Add a new button to mark a todo as complete */}
     </div>
   )
 }

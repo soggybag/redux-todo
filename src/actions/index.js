@@ -1,5 +1,6 @@
 const NEW_TODO = 'NEW_TODO'
 const DELETE_TODO = 'DELETE_TODO'
+// Make a new Action to complete a todo item: COMPLETE_TODO
 
 const newTodo = (payload) => {
   return {
@@ -8,8 +9,6 @@ const newTodo = (payload) => {
   }
 }
 
-// deleteTodo(4)
-
 const deleteTodo = (index) => {
   return {
     type: DELETE_TODO, // !!!! REQUIERED !!!!!
@@ -17,9 +16,12 @@ const deleteTodo = (index) => {
   }
 }
 
+// Make a new Action creator function completeTodo
+
 export { 
   NEW_TODO, 
   newTodo,
   DELETE_TODO,
   deleteTodo
+  // Export the new action and creator
 }

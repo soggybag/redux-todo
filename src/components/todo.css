@@ -27,3 +27,7 @@
   background-color: #fff;
   color: #000;
 }
+
+.TodoRemoveButton {
+  font-size: 2em;
+}
