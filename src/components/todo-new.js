@@ -35,9 +35,7 @@ function TodoNew(props) {
       <button 
         className="todo-button"
         type="submit"
-      >
-        +
-      </button>
+      >✚</button>
 
     </form>
   )

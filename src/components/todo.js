@@ -15,11 +15,11 @@ function Todo(props) {
     <div className="todo">
       <h1 className="todo-name">{name}</h1>
       <button 
-        className="TodoRemoveButton"
+        className={`${completedClass}`}
         onClick={() => {
           dispatch(deleteTodo(index))
         }}
-        className={`todo-completed ${completedClass}`}
+        
       >✖︎</button>
       {/* Add a new button to mark a todo as complete */}
     </div>
