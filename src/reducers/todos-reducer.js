@@ -1,10 +1,21 @@
-import { NEW_TODO, DELETE_TODO } from '../actions'
+import { NEW_TODO, DELETE_TODO, COMPLETE_TODO } from '../actions'
 // import the new action
+
+// { type: NEW_TODO, payload: { name, date, completed } }
+// { type: COMPLETE_TODO, payload: { index: 0 } }
 
 const todoReducer = (state = [], action) => {
   switch(action.type) {
+    case COMPLETE_TODO: 
+      return state.map((todo, i) => {
+        if (action.payload.index === i) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+
     case NEW_TODO: 
-      return [...state, action.payload]
+      return [...state, action.payload ]
     
     case DELETE_TODO: 
       const newState = state.filter((item, i) => {

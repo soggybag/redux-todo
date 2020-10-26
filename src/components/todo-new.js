@@ -15,7 +15,7 @@ function TodoNew(props) {
     e.preventDefault()
     if (name === '') { return }
     // newTodo = (payload) => { ..... }
-    dispatch(newTodo(new TodoItem(name)))
+    dispatch( newTodo( new TodoItem(name) ) )
     setName('')
   }
 
