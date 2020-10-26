@@ -9,6 +9,8 @@ import { loadState, saveState } from './helpers'
 import NewTodo from './components/todo-new'
 import TodoList from './components/todo-list'
 import TodoStats from './components/TodoStats'
+import TodoCount from './components/TodoCount'
+import RemoveAll from './components/RemoveAll'
 
 const persistedState = loadState();
 const store = createStore(reducers, persistedState);
@@ -24,6 +26,8 @@ function App() {
         <NewTodo />
         <TodoStats />
         <TodoList />
+        <TodoCount />
+        <RemoveAll />
       </div>
     </Provider>
   );

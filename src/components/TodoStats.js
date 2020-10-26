@@ -22,9 +22,10 @@ function TodoStats(props) {
 			<small>Count: {total}</small>
 			<small> Complete: {complete}</small>
 			<small> Active: {active}</small>
+
 			<div style={{ width: '100%', height: '3px', backgroundColor: '#eee', display:'flex'}}>
-				<div style={{ width:`${100 * active / total}%`, backgroundColor:'#0f0', height: '100%'}}></div>
-				<div style={{ width:`${100 * complete / total}%`, backgroundColor:'#f00', height: '100%'}}></div>
+				<div style={{ width:`${100 * complete / total}%`, backgroundColor:'#0f0', height: '100%'}}></div>
+				<div style={{ width:`${100 * active / total}%`, backgroundColor:'#f00', height: '100%'}}></div>
 			</div>
 		</div>
 	)

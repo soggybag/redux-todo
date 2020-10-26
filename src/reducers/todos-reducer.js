@@ -1,4 +1,4 @@
-import { NEW_TODO, DELETE_TODO, COMPLETE_TODO } from '../actions'
+import { NEW_TODO, DELETE_TODO, COMPLETE_TODO, REMOVE_ALL } from '../actions'
 // import the new action
 
 // { type: NEW_TODO, payload: { name, date, completed } }
@@ -6,6 +6,9 @@ import { NEW_TODO, DELETE_TODO, COMPLETE_TODO } from '../actions'
 
 const todoReducer = (state = [], action) => {
   switch(action.type) {
+    case REMOVE_ALL: 
+      return []
+
     case COMPLETE_TODO: 
       return state.map((todo, i) => {
         if (action.payload.index === i) {
