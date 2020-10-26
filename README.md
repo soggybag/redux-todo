@@ -85,3 +85,14 @@ Add a sort property to state, imagine a string that names the sorted state. When
 **Method 2**
 
 Sort the existing list in state. Todo this you'll need create a new list and sort this since `Array.sort()` modifies the sorted array! 
+
+### Priority
+
+Todos could use a priority. Imagine each todo item has a menu that allows you to choose: Low, Medium, Or High. You could use this to mark important tasks. 
+
+To solve this problem you'll need to follow these steps: 
+
+- Modify `TodoItem.js` by adding a new property: priority. 
+- Modify `Todo.js` component to show a menu to select the priority. Use `<select>` tag for the menu and `<option>` tag for choice. You can set the value to the current priority of the todo item to show the selected priority in the menu.
+- In `actions/index.js` create a new action: `SET_PRIORITY`. This action should take the priority level and the index of the todo item.
+- In `todo-reducer.js` add a new case to handle the `SET_PRIORITY` action. 
