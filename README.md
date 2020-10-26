@@ -50,12 +50,24 @@ You'll need to do the following:
 	- Import your `completeTodo` action creator
 	- Add a new button to toggle the todo state
 		- Add an `onClick` handler that uses the dispatcher and your `completeTodo` action creator. 
+- Style a completed todo 
+	- Use the `completed` property to set the style of a todo. todos that are completed true should have one look, and false another. 
 
 ### Display the Date
 
 Todos are displayed by the `Todo` Component defined in `Todo.js`. Add another element here to display the date. 
 
-Use [`Date.toLocaleDateString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) to convert the date object to a more readble string. 
+Use [`Date.toLocaleDateString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) to convert the date object to a more readble string.
+
+### Display Stats 
+
+Create a new component that will display the todo statistics. This component should display: 
+
+- Total Todos
+- Completed Todos
+- Active Todos
+
+Do this by making a new component. This component can get the list of todos with: `useSelector`. The total count of todos is the length of the todos array. Use `Array.reduce()` to count the Active and Completed todos. 
 
 ### Sort and filter todos
 
@@ -63,3 +75,13 @@ The todo list is looking pretty good but it could better! There are two challeng
 
 - sort todos on the completed, date, or name
 - filter todos to show: alll todos, completed todos, or not completed todos
+
+There are two ways to handle this: 
+
+**Method 1**
+
+Add a sort property to state, imagine a string that names the sorted state. When Displaying the todo list you'll need to get this value and sort the list of todos in the todo-list component. To implement this method you'll need to define a new reducer and have this reducer handle changes to the sort state. 
+
+**Method 2**
+
+Sort the existing list in state. Todo this you'll need create a new list and sort this since `Array.sort()` modifies the sorted array! 
