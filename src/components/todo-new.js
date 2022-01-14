@@ -7,7 +7,6 @@ import TodoItem from './TodoItem'
 import './todo-new.css'
 
 function TodoNew(props) {
-
   const [ name, setName ] = useState('')
   const dispatch = useDispatch()
 

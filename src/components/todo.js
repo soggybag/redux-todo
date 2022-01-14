@@ -19,7 +19,6 @@ function Todo(props) {
         onClick={() => {
           dispatch(deleteTodo(index))
         }}
-        
       >✖︎</button>
       {/* Add a new button to mark a todo as complete */}
     </div>
